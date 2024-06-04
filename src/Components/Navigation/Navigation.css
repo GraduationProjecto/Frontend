@@ -1,0 +1,77 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+
+/* General */
+nav {
+    padding-top: 60px;
+}
+
+/* Title */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+.text h1 {
+    font-size: 28px;
+}
+.text p {
+    font-size: 14px;
+}
+
+/* Navigation */
+.ulNav {
+    display: flex !important;
+    background-color: #fff;
+    
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+ .liNav {
+    width: 50%;
+}
+
+.aNAv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 8px;
+    border: 2px solid transparent;
+    color: #cbcbca;
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+}
+
+
+.spanNav {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+li .aNAv.active {
+    color: #f2a222;
+    border-color: #f2a222;
+    background-color: rgba(242,162,34,.1);
+}
