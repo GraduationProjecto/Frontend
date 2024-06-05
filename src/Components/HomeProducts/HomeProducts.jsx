@@ -6,23 +6,24 @@ import HomeProduct from './../HomeProduct/HomeProduct';
 
 export default function HomeProducts() {
 
-    const [newData, setNewData] = useState([]);
     let [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState("");
-  
-    async function getProducts() {
+    const [usedCars, setUsedCars] = useState([]);
+
+    async function fetchUsedCars() {
       setLoading(false);
-      let data = await axios.get(
-        "https://ecommerce.routemisr.com/api/v1/products"
-      );
-      if (data.status == 200) {
-        setNewData(data?.data?.data);
-        setLoading(true);
+      try {
+        const response = await axios.get(`https://backend-c6zw.onrender.com/car/usedCars?page=2`);
+        if (response.status === 200) {
+          setUsedCars(response.data.response);
+          setLoading(true);
+        }
+      } catch (error) {
+        console.error("Error fetching used cars:", error);
       }
     }
 
     useEffect(() => {
-        getProducts();
+      fetchUsedCars();  
       }, []);
     
       if (!loading) return <Loading />;
@@ -30,14 +31,8 @@ export default function HomeProducts() {
   return (
     <>
        <div className="row">
-        {newData
-          .filter((item) => {
-            return search.toLowerCase() === ""
-              ? item
-              : item.title.toLowerCase().includes(search);
-          })
-          .map((item) => {
-            return <HomeProduct item={item} key={item.id} />;
+        {usedCars.map((item) => {
+            return <HomeProduct item={item} key={item._id} />;
           })}
       </div>
     </>

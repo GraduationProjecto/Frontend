@@ -6,9 +6,7 @@ import MainLayout from "./Layouts/MainLayout";
 import "./App.css";
 import Products from "./Components/Products/Products";
 import SellCar from "./Components/SellCar/SellCar";
-import Cart from "./Components/Cart/Cart";
-import Wishlist from "./Components/Wishlist/Wishlist";
-import AuthLAyOut from "./Layouts/AuthLAyOut";
+
 import SignIn from "./Components/SignIn/SignIn";
 import ImportedCars from './Components/ImportedCars/ImportedCars';
 import NotFound from "./Components/NotFound/NotFound";
@@ -16,12 +14,7 @@ import SignUp from "./Components/SignUp/SignUp";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import StoreContextProvider from "./context/StoreContextProvider";
 import ClearData from "./Components/ClearData/ClearData";
-import Footer from './Components/Footer/Footer';
 import { ToastContainer } from "react-toastify";
-import Address from "./Components/Address/Address";
-import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
-import VerifyCode from "./Components/VerifyCode/VerifyCode";
-import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import RateCar from "./Components/RateCar/RateCar";
 import UsedCars from "./Components/UsedCars/UsedCars";
 import Navigation from "./Components/Navigation/Navigation";
@@ -43,6 +36,10 @@ function App() {
           element: <UsedCars />,
         },
         {
+          path: "/usedCar/:id",
+          element: <UsedCars />,
+        },
+        {
           path: "newCar",
           element: <Products />,
         },
@@ -54,10 +51,7 @@ function App() {
           path: "importedCar",
           element: <ImportedCars />,
         },
-        {
-          path: "wishlist",
-          element: <Wishlist />,
-        },
+       
         {
           path: "SellCar",
           element: <Navigation />,
@@ -78,18 +72,9 @@ function App() {
             )  },
           ],
         },
-        {
-          path: "cart",
-          element: <Cart />,
-        },
-        {
-          path: "address/:id",
-          element: <Address />,
-        },
-        {
-          path: "wishlist",
-          element: <Wishlist />,
-        },
+       
+       
+       
         {
           path: "productDetails/:id",
           element: <ProductDetails />,
@@ -105,9 +90,7 @@ function App() {
           ),
         },
         { path: "signUp", element: <SignUp /> },
-        { path: "forgetPassword", element: <ForgetPassword /> },
-        { path: "verifyCode", element: <VerifyCode /> },
-        { path: "resetPassword", element: <ResetPassword /> },
+
       ],
     },
   ]);
@@ -117,7 +100,6 @@ function App() {
       <ToastContainer theme="colored" className="mt-5" autoClose="600" />
       <StoreContextProvider>
         <RouterProvider router={routes} />
-      
       </StoreContextProvider>
       
     </>

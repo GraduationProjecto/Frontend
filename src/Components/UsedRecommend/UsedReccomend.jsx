@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-export default function UsedCar({ item }) {
+export default function UsedRecommended({ item }) {
 
   return (
     <>

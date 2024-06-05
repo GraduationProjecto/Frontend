@@ -6,13 +6,8 @@ export default function Navbar() {
   let { counter, getCart, setCounter } = useContext(storeContext);
   let token = localStorage.getItem("token");
   useEffect(() => {
-    (async () => {
-      let { data } = await getCart();
-      if (data?.status == "success") {
-        setCounter(data.numOfCartItems);
-      }
-    })();
-  }, [token]);
+   
+    }, [token]);
   return (
     <>
       <nav className="navbar navNav navbar-expand-lg bg-body-tertiary p-3">
