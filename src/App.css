@@ -101,3 +101,256 @@ body{
   height: auto;
   object-fit: cover;
 }
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f2a222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.auction-list {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.auction-list h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.auction-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auction-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.auction-card h2 {
+  font-size: 1.5em;
+  color: #f2a222;
+  margin-bottom: 10px;
+}
+
+.auction-card p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.auction-card button {
+  background-color: #f2a222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auction-card button:hover {
+  background-color: #d18c1e;
+}
+
+.auction-card .car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.auction-details {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auction-details h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.auction-details p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.auction-details .car-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.auction-details .car-images img {
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+
+.create-auction {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.create-auction h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-auction-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.create-auction-button:hover {
+  background-color: #444;
+}
+
+
+
+
+/* UserProfile.css */
+.user-profile {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.cars-for-sale {
+  margin-top: 40px;
+}
+
+.cars-for-sale h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+.car-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.car-card h4 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.car-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.car-card p strong {
+  font-weight: bold;
+}
+

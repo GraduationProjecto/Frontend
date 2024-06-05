@@ -68,6 +68,25 @@ export default function Navbar() {
                 <NavLink
                   className="nav-link fw-bold "
                   aria-current="page"
+                  to="/Auction"
+                >
+                Auction
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link fw-bold "
+                  aria-current="page"
+                  to="/Profile"
+                >
+                Profile
+
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link fw-bold "
+                  aria-current="page"
                   to="/RateCar"
                 >
                 Rate Car

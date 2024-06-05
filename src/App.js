@@ -16,10 +16,15 @@ import StoreContextProvider from "./context/StoreContextProvider";
 import ClearData from "./Components/ClearData/ClearData";
 import { ToastContainer } from "react-toastify";
 import RateCar from "./Components/RateCar/RateCar";
+import Auction from "./Components/Auction/Auction"
 import UsedCars from "./Components/UsedCars/UsedCars";
 import Navigation from "./Components/Navigation/Navigation";
 import SellNewCar from "./Components/SellNewCar/SellNewCar";
 import ProtectedLayer from "./Components/ProtectedLayer/ProtectedLayer";
+import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
+import CreateAuction from "./Components/CreateAuction/CreateAuction";
+import UserProfile from "./Components/Profile/Profile";
+
 
 function App() {
   let routes = createHashRouter([
@@ -46,6 +51,22 @@ function App() {
         {
           path: "RateCar",
           element: <RateCar />,
+        },{
+          path: "Auction",
+          element: <Auction />,
+        },
+        {
+          path: "CreateAuction/:id",
+          element: <CreateAuction/>,
+        },
+        {
+          path: "Profile",
+          element: <UserProfile/>,
+        },
+
+        ,{
+          path: "Auction/:id",
+          element: <AuctionDetails />,
         },
         {
           path: "importedCar",
