@@ -85,6 +85,7 @@ export default function Navbar() {
                   to="/Profile"
                 >
                 Profile
+
                 </NavLink>
               </li>
               <li className="nav-item">

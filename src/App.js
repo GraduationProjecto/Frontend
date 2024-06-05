@@ -32,6 +32,7 @@ import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
 import CreateAuction from "./Components/CreateAuction/CreateAuction";
 import UserProfile from "./Components/Profile/Profile";
 
+
 function App() {
   let routes = createHashRouter([
     {
@@ -65,6 +66,7 @@ function App() {
           path: "Profile",
           element: <UserProfile/>,
         },
+
         ,{
           path: "Auction/:id",
           element: <AuctionDetails />,

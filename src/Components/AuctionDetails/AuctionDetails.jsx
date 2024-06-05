@@ -14,12 +14,13 @@ console.log(id);
         authorization: `Bearer__${localStorage.getItem("token")}`,
       },
     })
+
       .then(response => {
         console.log(response);
         setAuction(response.data.response);
       })
       .catch(error => {
-        
+
         console.error('Error fetching auction details:', error);
       });
   }, [id]);

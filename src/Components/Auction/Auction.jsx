@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuctionCard from './AuctionCard';
-import io from 'socket.io-client';
 
 const AuctionList = () => {
+
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
@@ -41,6 +41,7 @@ const AuctionList = () => {
     return () => {
       socket.disconnect();
     };
+
   }, []);
 
   return (
@@ -56,3 +57,4 @@ const AuctionList = () => {
 };
 
 export default AuctionList;
+
