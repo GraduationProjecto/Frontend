@@ -4,7 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuctionCard from './AuctionCard';
 
-const Auction = () => {
+const AuctionList = () => {
+
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
@@ -16,6 +17,31 @@ const Auction = () => {
       .catch(error => {
         console.error('Error fetching auctions:', error);
       });
+
+    // Set up Socket.IO connection
+    const socket = io('http://localhost:8080');
+
+    socket.on('connect', () => {
+      console.log('Connected to Socket.IO server');
+    });
+
+    socket.on('newAuction', (newAuction) => {
+      setAuctions((prevAuctions) => [...prevAuctions, newAuction]);
+    });
+
+    socket.on('disconnect', () => {
+      console.log('Disconnected from Socket.IO server');
+    });
+
+    socket.on('connect_error', (error) => {
+      console.error('Socket.IO connection error:', error);
+    });
+
+    // Clean up Socket.IO connection when the component is unmounted
+    return () => {
+      socket.disconnect();
+    };
+
   }, []);
 
   return (
@@ -30,4 +56,5 @@ const Auction = () => {
   );
 };
 
-export default Auction;
+export default AuctionList;
+
