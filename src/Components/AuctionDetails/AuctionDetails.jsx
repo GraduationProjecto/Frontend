@@ -9,12 +9,17 @@ const AuctionDetails = () => {
 console.log(id);
   useEffect(() => {
     // Fetch auction details from the backend
-    axios.get(`http://localhost:8080/auction/specificAuction/${id}`)
+    axios.get(`http://localhost:8080/auction/specificAuction/${id}` , {
+      headers: {
+        authorization: `Bearer__${localStorage.getItem("token")}`,
+      },
+    })
       .then(response => {
         console.log(response);
         setAuction(response.data.response);
       })
       .catch(error => {
+        
         console.error('Error fetching auction details:', error);
       });
   }, [id]);

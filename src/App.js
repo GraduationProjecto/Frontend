@@ -29,6 +29,8 @@ import Navigation from "./Components/Navigation/Navigation";
 import SellNewCar from "./Components/SellNewCar/SellNewCar";
 import ProtectedLayer from "./Components/ProtectedLayer/ProtectedLayer";
 import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
+import CreateAuction from "./Components/CreateAuction/CreateAuction";
+import UserProfile from "./Components/Profile/Profile";
 
 function App() {
   let routes = createHashRouter([
@@ -54,6 +56,14 @@ function App() {
         },{
           path: "Auction",
           element: <Auction />,
+        },
+        {
+          path: "CreateAuction/:id",
+          element: <CreateAuction/>,
+        },
+        {
+          path: "Profile",
+          element: <UserProfile/>,
         },
         ,{
           path: "Auction/:id",
