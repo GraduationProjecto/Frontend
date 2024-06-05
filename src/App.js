@@ -23,10 +23,12 @@ import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import VerifyCode from "./Components/VerifyCode/VerifyCode";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import RateCar from "./Components/RateCar/RateCar";
+import Auction from "./Components/Auction/Auction"
 import UsedCars from "./Components/UsedCars/UsedCars";
 import Navigation from "./Components/Navigation/Navigation";
 import SellNewCar from "./Components/SellNewCar/SellNewCar";
 import ProtectedLayer from "./Components/ProtectedLayer/ProtectedLayer";
+import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
 
 function App() {
   let routes = createHashRouter([
@@ -49,6 +51,13 @@ function App() {
         {
           path: "RateCar",
           element: <RateCar />,
+        },{
+          path: "Auction",
+          element: <Auction />,
+        },
+        ,{
+          path: "Auction/:id",
+          element: <AuctionDetails />,
         },
         {
           path: "importedCar",

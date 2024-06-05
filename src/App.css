@@ -55,3 +55,115 @@ body{
   }
 }
 
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f2a222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.auction-list {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.auction-list h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.auction-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auction-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.auction-card h2 {
+  font-size: 1.5em;
+  color: #f2a222;
+  margin-bottom: 10px;
+}
+
+.auction-card p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.auction-card button {
+  background-color: #f2a222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auction-card button:hover {
+  background-color: #d18c1e;
+}
+
+.auction-card .car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.auction-details {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auction-details h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.auction-details p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.auction-details .car-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.auction-details .car-images img {
+  max-width: 100px;
+  border-radius: 5px;
+}

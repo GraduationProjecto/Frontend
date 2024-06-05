@@ -34,7 +34,7 @@ export default function SignIn() {
     onSubmit: (values) => {
       setLoading(false);
       axios
-        .post("https://backend-c6zw.onrender.com/user/login", values)
+        .post("http://localhost:8080/user/login", values)
         .then((data) => {
           localStorage.setItem("token", data.data.data);
           navigate("/");
