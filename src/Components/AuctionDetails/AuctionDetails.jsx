@@ -11,15 +11,17 @@ const AuctionDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`https://backend-c6zw.onrender.com/auction/specificAuction/${id}`, {
-        headers: {
-          authorization: `Bearer__${localStorage.getItem("token")}`,
-        },
-      })
-      .then((response) => {
+    // Fetch auction details from the backend
+    axios.get(`https://backend-c6zw.onrender.com/auction/specificAuction/${id}` , {
+      headers: {
+        authorization: `Bearer__${localStorage.getItem("token")}`,
+      },
+    })
+
+      .then(response => {
+        console.log(response);
         setAuction(response.data.response);
-        setLoading(false);
+        setLoading(false)
       })
       .catch((error) => {
         console.error("Error fetching auction details:", error);
