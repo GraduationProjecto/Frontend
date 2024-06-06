@@ -10,11 +10,12 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/user/profile', {
+        const response = await axios.get('https://ad02-196-221-4-9.ngrok-free.app/user/profile', {
           headers: {
             authorization:` Bearer__${localStorage.getItem("token")}`,
           },
         }); 
+        console.log(response);
         setUserData(response.data.data);
       } catch (error) {
         console.error('Error fetching user data:', error);

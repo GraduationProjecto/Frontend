@@ -80,7 +80,7 @@ export default function ProductDetails() {
       }
 
       await axios.post(
-        `https://92aa-196-221-4-9.ngrok-free.app/car/rating/${id}`,
+        `https://backend-c6zw.onrender.com/car/rating/${id}`,
         { rating }, // Send numeric rating in the request body
         {
           headers: {
