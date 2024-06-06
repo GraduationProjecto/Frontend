@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
@@ -10,15 +10,19 @@ import "slick-carousel/slick/slick-theme.css";
 import Footer from "../Footer/Footer";
 import NewRecomnded from "../NewRecomnded/NewRecomnded";
 import UsedRecommended from "../UsedRecommend/UsedReccomend.jsx";
+import ModalLog from './../ModalLog/ModalLog';
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showModall, setShowModall] = useState(false);
   const [sameBrandCars, setSameBrandCars] = useState([]);
   const [sameBrandCarsUsed, setSameBrandCarsUsed] = useState([]);
   let token = localStorage.getItem("token");
   let { id } = useParams();
+
+  const navigate = useNavigate();
 
   async function getSingleProduct() {
     setLoading(true);
@@ -96,11 +100,21 @@ export default function ProductDetails() {
     }
   }
 
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setShowModall(true);
+    } else {
+      navigate(path);
+    }
+  };
+
   useEffect(() => {
     getSingleProduct();
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, [id]); // Re-fetch product when 'id' parameter changes
 
@@ -131,8 +145,12 @@ export default function ProductDetails() {
           <div className="container my-5 productDetailsSection rounded-2">
             <div className="productDetailsContainer p-3">
               <div className="sectionHead p-3">
-                <div className="d-flex justify-content-between">
-                  <h3>{product?.type || product?.brand}</h3>
+                <div className="mb-4">
+                  <h3 className="text-warning">CarDetails</h3>
+                  <hr className="w-75 text-warning fw-bold"></hr>
+                </div>
+                <div className="d-flex mt-2 justify-content-between">
+                  <h3>{product?.title || product?.brand}</h3>
                   <span>{product?.price} EGP</span>
                 </div>
               </div>
@@ -198,9 +216,13 @@ export default function ProductDetails() {
                     ) : (
                       <div className="d-inline">
                         <span className="px-2">+20xxxxxxxx</span>
-                        <NavLink to={"/signIn"} className="px-1 text-light">
+                        <a  onClick={(e) => handleNavClick(e, "new")} href="/signIn" className="px-1 text-light">
                           Show Number
-                        </NavLink>
+                        </a>
+                        <ModalLog
+                          show={showModall}
+                          onClose={() => setShowModal(false)}
+                        />
                       </div>
                     )}
                   </div>
@@ -277,7 +299,6 @@ export default function ProductDetails() {
         handleClose={() => setShowModal(false)}
         handleSubmit={submitRating}
       />
-
       <Footer />
     </>
   );

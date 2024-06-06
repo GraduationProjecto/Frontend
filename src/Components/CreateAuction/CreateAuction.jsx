@@ -28,7 +28,7 @@ const CreateAuction = () => {
     try {
         formData.startingPrice = Number(formData.startingPrice)
         console.log(formData);
-      const response = await axios.post(`http://localhost:8080/auction/createAuction/${id}`, formData,  {
+      const response = await axios.post(`https://backend-c6zw.onrender.com/auction/createAuction/${id}`, formData,  {
         headers: {
           authorization: `Bearer__${localStorage.getItem("token")}`,
         },
@@ -41,11 +41,12 @@ const CreateAuction = () => {
   };
 
   return (
-    <div className="create-auction">
-      <h2>Create a Car Auction</h2>
+   <div className='container my-5'>
+     <div className="create-auction">
+      <h2 className='fw-bold'>Create a Car Auction</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Title</label>
+          <label className='fw-bold text-warning' htmlFor="title">Title</label>
           <input
             type="text"
             id="title"
@@ -56,7 +57,7 @@ const CreateAuction = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="description">Description</label>
+          <label className='fw-bold text-warning' htmlFor="description">Description</label>
           <input
             type="text"
             id="description"
@@ -67,7 +68,7 @@ const CreateAuction = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="startingPrice">Starting Price</label>
+          <label className='fw-bold text-warning' htmlFor="startingPrice">Starting Price</label>
           <input
             type="number"
             id="startingPrice"
@@ -78,7 +79,7 @@ const CreateAuction = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="startingTime">Start Date</label>
+          <label className='fw-bold text-warning' htmlFor="startingTime">Start Date</label>
           <input
             type="datetime-local"
             id="startingTime"
@@ -89,7 +90,7 @@ const CreateAuction = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="endingTime">End Date</label>
+          <label className='fw-bold text-warning' htmlFor="endingTime">End Date</label>
           <input
             type="datetime-local"
             id="endingTime"
@@ -99,9 +100,10 @@ const CreateAuction = () => {
             required
           />
         </div>
-        <button type="submit" className="create-auction-button">Create Auction</button>
+        <button type="submit" className="create-auction-button bg-warning fw-bold">Create Auction</button>
       </form>
     </div>
+   </div>
   );
 };
 

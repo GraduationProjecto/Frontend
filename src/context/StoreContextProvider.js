@@ -5,7 +5,6 @@ import { createContext } from "react";
 export let storeContext = createContext(0);
 
 export default function StoreContextProvider({ children }) {
-  let [counter, setCounter] = useState(0);
   const [response, setResponse] = useState([]);
 
   function pay(cartId, shippingAddress) {
@@ -40,6 +39,7 @@ export default function StoreContextProvider({ children }) {
     }
 
     const queryString = queryParams.toString();
+    console.log(queryString);
     const url = `https://backend-c6zw.onrender.com/car/search?${queryString}`;
 
     try {

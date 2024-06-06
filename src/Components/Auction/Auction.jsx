@@ -47,14 +47,16 @@ const Auction = () => {
   }, []);
 
   return (
-    <div className="auction-list">
-      <h1>Upcoming Live Auctions</h1>
+   <div className='container bg-white rounded-3 p-2 my-5 shadow'>
+     <div className="auction-list">
+      <h1 className='text-warning fw-bold'>Upcoming Live Auctions</h1>
       <div className="auction-cards">
         {auctions.map((auction) => (
           <AuctionCard key={auction._id} auction={auction} />
         ))}
       </div>
     </div>
+   </div>
   );
 };
 
