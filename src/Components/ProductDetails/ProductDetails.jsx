@@ -106,6 +106,24 @@ export default function ProductDetails() {
 
   if (loading) return <Loading />;
 
+  // Function to render stars based on rating
+  const renderStars = (rating) => {
+    const totalStars = 5;
+    const solidStars = Math.round(rating); // Round to nearest whole number for stars
+    const emptyStars = totalStars - solidStars;
+
+    return (
+      <div>
+        {Array.from({ length: solidStars }, (_, index) => (
+          <i key={index} className="fa fa-star text-warning"></i>
+        ))}
+        {Array.from({ length: emptyStars }, (_, index) => (
+          <i key={index} className="fa fa-star-o text-warning"></i>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       {product.type ? (
@@ -169,6 +187,10 @@ export default function ProductDetails() {
                       <p className="p-0 m-0">{product?.color}</p>
                     </div>
                   </div>
+                  <div className="d-flex align-items-center justify-content-center my-3">
+                    <span className="me-2">Average Rating:</span>
+                    {renderStars(product?.totalRating || 0)}
+                  </div>
                   <div className="btnPhone col-md-12 productInfoCar my-2 bg-body p-4 rounded-2 text-center my-5">
                     <i className="fa-solid fa-phone px-2"></i>
                     {token ? (
@@ -229,6 +251,10 @@ export default function ProductDetails() {
                         <span className="text-warning fw-bold">To</span> <br />{" "}
                         {product.price + 145235} <small>EGP</small>
                       </p>
+                    </div>
+                    <div className="d-flex align-items-center justify-content-center mt-3">
+                      <span className="me-2">Average Rating:</span>
+                      {renderStars(product?.totalRating || 0)}
                     </div>
                   </div>
                 </div>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-const UserProfile = () => {
+const Profile = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate(); // Initialize useNavigate
 
@@ -12,7 +12,7 @@ const UserProfile = () => {
       try {
         const response = await axios.get('http://localhost:8080/user/profile', {
           headers: {
-            authorization: `Bearer__${localStorage.getItem("token")}`,
+            authorization:` Bearer__${localStorage.getItem("token")}`,
           },
         }); 
         setUserData(response.data.data);
@@ -66,4 +66,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default Profile;

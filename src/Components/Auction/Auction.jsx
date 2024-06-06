@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuctionCard from './AuctionCard';
-
+import io from 'socket.io-client'
 const AuctionList = () => {
 
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
     // Fetch auctions from the backend
-    axios.get('http://localhost:8080/auction/auctionsView')
+    axios.get('https://92aa-196-221-4-9.ngrok-free.app/auction/auctionsView')
       .then(response => {
         setAuctions(response.data.response);
       })

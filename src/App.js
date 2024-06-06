@@ -6,7 +6,7 @@ import MainLayout from "./Layouts/MainLayout";
 import "./App.css";
 import Products from "./Components/Products/Products";
 import SellCar from "./Components/SellCar/SellCar";
-
+import Profile from './Components/Profile/Profile';
 import SignIn from "./Components/SignIn/SignIn";
 import ImportedCars from './Components/ImportedCars/ImportedCars';
 import NotFound from "./Components/NotFound/NotFound";
@@ -23,7 +23,7 @@ import SellNewCar from "./Components/SellNewCar/SellNewCar";
 import ProtectedLayer from "./Components/ProtectedLayer/ProtectedLayer";
 import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
 import CreateAuction from "./Components/CreateAuction/CreateAuction";
-import UserProfile from "./Components/Profile/Profile";
+import AuctionList from "./Components/Auction/Auction";
 
 
 function App() {
@@ -52,8 +52,8 @@ function App() {
           path: "RateCar",
           element: <RateCar />,
         },{
-          path: "Auction",
-          element: <Auction />,
+          path: "AuctionList",
+          element: <AuctionList />,
         },
         {
           path: "CreateAuction/:id",
@@ -61,7 +61,7 @@ function App() {
         },
         {
           path: "Profile",
-          element: <UserProfile/>,
+          element: <Profile/>,
         },
 
         ,{
