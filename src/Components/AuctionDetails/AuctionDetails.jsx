@@ -18,6 +18,7 @@ console.log(id);
       .then(response => {
         console.log(response);
         setAuction(response.data.response);
+        
       })
       .catch(error => {
 
