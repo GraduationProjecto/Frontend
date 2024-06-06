@@ -9,9 +9,11 @@ const Auction = () => {
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
+    console.log("here");
     // Fetch auctions from the backend
     axios.get('https://backend-c6zw.onrender.com/auction/auctionsView')
       .then(response => {
+        console.log(response);
         setAuctions(response.data.response);
       })
       .catch(error => {

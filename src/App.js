@@ -25,7 +25,6 @@ import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
 import CreateAuction from "./Components/CreateAuction/CreateAuction";
 
 
-
 function App() {
   let routes = createHashRouter([
     {
