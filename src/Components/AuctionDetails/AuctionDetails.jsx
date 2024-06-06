@@ -9,7 +9,7 @@ const AuctionDetails = () => {
 console.log(id);
   useEffect(() => {
     // Fetch auction details from the backend
-    axios.get(`http://localhost:8080/auction/specificAuction/${id}` , {
+    axios.get(`https://backend-c6zw.onrender.com/auction/specificAuction/${id}` , {
       headers: {
         authorization: `Bearer__${localStorage.getItem("token")}`,
       },
