@@ -8,20 +8,6 @@ import Footer from './../Footer/Footer';
 
 
 export default function MainSection() {
-  const [items, setItems] = useState([]);
-
-  async function getItems() {
-    let { data } = await axios.get(
-      "https://ecommerce.routemisr.com/api/v1/categories"
-    );
-    setItems(data.data);
-  }
-
-  useEffect(() => {
-    getItems();
-  }, []);
-
-
   return (
     <>
     <div className="container road text-light p-4 rounded-4 mt-5 d-flex">

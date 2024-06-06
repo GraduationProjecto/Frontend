@@ -10,7 +10,7 @@ export default function Products() {
   const [newCar, setNewCar] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  async function fetchUsedCars(page) {
+  async function fetchNewCars(page) {
     setLoading(true);
     try {
       const response = await axios.get(
@@ -27,7 +27,7 @@ export default function Products() {
   }
 
   useEffect(() => {
-    fetchUsedCars(currentPage);
+    fetchNewCars(currentPage);
   }, [currentPage]);
 
   const handlePageChange = (page) => {

@@ -265,7 +265,7 @@ export default function RateCar() {
                   <div className="sucPredict w-75 fs-6 p-4">
                     <h1 className="my-2 fw-bolder p-2">{model}</h1>
                     <div className="fw-bold p-2 fs-4">
-                      Predicted Price for Your Car: {predict}
+                      Predicted Price for Your Car: <h2 className="fw-bold text- p-2 predictPrice">{predict}</h2>
                     </div>
                     <Button
                       onClick={turn}

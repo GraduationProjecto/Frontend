@@ -5,20 +5,13 @@ import { storeContext } from "../../context/StoreContextProvider";
 export default function Navbar() {
   let { counter, getCart, setCounter } = useContext(storeContext);
   let token = localStorage.getItem("token");
-  useEffect(() => {
-    (async () => {
-      let { data } = await getCart();
-      if (data?.status == "success") {
-        setCounter(data.numOfCartItems);
-      }
-    })();
-  }, [token]);
+  useEffect(() => {}, [token]);
   return (
     <>
       <nav className="navbar navNav navbar-expand-lg bg-body-tertiary p-3">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src={logo} width={"150px"}/>
+            <img src={logo} width={"150px"} />
           </a>
           <button
             className="navbar-toggler"
@@ -32,7 +25,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item ">
                 <NavLink
                   className="nav-link fw-bold "
@@ -57,7 +50,7 @@ export default function Navbar() {
                   aria-current="page"
                   to="/importedCar"
                 >
-                Imported cars
+                  Imported cars
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -66,7 +59,7 @@ export default function Navbar() {
                   aria-current="page"
                   to="/SellCar"
                 >
-                Sell car
+                  Sell car
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -75,40 +68,54 @@ export default function Navbar() {
                   aria-current="page"
                   to="/Auction"
                 >
-                Auction
+                  Auction
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link fw-bold "
-                  aria-current="page"
-                  to="/Profile"
-                >
-                Profile
 
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink
                   className="nav-link fw-bold "
                   aria-current="page"
                   to="/RateCar"
                 >
-                Rate Car
+                  Rate Car
                 </NavLink>
               </li>
             </ul>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-ite">
-                <NavLink
-                  className="nav-link  position-relative mx-4"
-                  aria-current="page"
-                  to="/signIn"
+              <li className="nav-ite dropdown">
+                <a
+                  className="nav-link dropdown-toggle fw-bold"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-                  {token ? "LogOut" : "LogIn"}
-                  <i className="fa-solid fa-right-from-bracket iconLogo mx-2"></i>
-                </NavLink>
+                  Profile
+                </a>
+                <ul className="dropdown-menu p-2">
+                  <li className="nav-ite">
+                    <NavLink
+                      className="nav-link  position-relative "
+                      aria-current="page"
+                      to="/signIn"
+                    >
+                      {token ? "LogOut" : "LogIn"}
+                      <i className="fa-solid fa-right-from-bracket iconLogo mx-2"></i>
+                    </NavLink>
+                  </li>
+                  <li className="nav-ite">
+                    <NavLink
+                      className="nav-link fw-bold "
+                      aria-current="page"
+                      to="/Profile"
+                    >
+                      Profile
+                    </NavLink>
+                  </li>
+                 
+                </ul>
               </li>
             </ul>
           </div>

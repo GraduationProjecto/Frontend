@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
 export default function RatingModal({ show, handleClose, handleSubmit }) {
-    const [rating, setRating] = useState(0);
-    const submitRating = () => {
-      handleSubmit(rating);
-      handleClose();
-    };
-  
+  const [rating, setRating] = useState(0);
+
+  const submitRating = () => {
+    handleSubmit(rating);
+    handleClose();
+  };
+
   return (
-    <>
-       <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Rate This Car</Modal.Title>
       </Modal.Header>
@@ -37,6 +37,5 @@ export default function RatingModal({ show, handleClose, handleSubmit }) {
         </Button>
       </Modal.Footer>
     </Modal>
-    </>
-  )
+  );
 }
