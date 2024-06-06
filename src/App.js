@@ -2,6 +2,7 @@ import "./App.css";
 import MainSection from "./Components/MAinSection/MainSection";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
+import 'font-awesome/css/font-awesome.min.css';
 
 import "./App.css";
 import Products from "./Components/Products/Products";
@@ -23,7 +24,7 @@ import SellNewCar from "./Components/SellNewCar/SellNewCar";
 import ProtectedLayer from "./Components/ProtectedLayer/ProtectedLayer";
 import AuctionDetails from "./Components/AuctionDetails/AuctionDetails";
 import CreateAuction from "./Components/CreateAuction/CreateAuction";
-import AuctionList from "./Components/Auction/Auction";
+
 
 
 function App() {
@@ -52,8 +53,8 @@ function App() {
           path: "RateCar",
           element: <RateCar />,
         },{
-          path: "AuctionList",
-          element: <AuctionList />,
+          path: "Auction",
+          element: <Auction />,
         },
         {
           path: "CreateAuction/:id",

@@ -4,13 +4,13 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuctionCard from './AuctionCard';
 import io from 'socket.io-client'
-const AuctionList = () => {
+const Auction = () => {
 
   const [auctions, setAuctions] = useState([]);
 
   useEffect(() => {
     // Fetch auctions from the backend
-    axios.get('https://92aa-196-221-4-9.ngrok-free.app/auction/auctionsView')
+    axios.get('https://backend-c6zw.onrender.com/auction/auctionsView')
       .then(response => {
         setAuctions(response.data.response);
       })
@@ -19,7 +19,7 @@ const AuctionList = () => {
       });
 
     // Set up Socket.IO connection
-    const socket = io('http://localhost:8080');
+    const socket = io('https://backend-c6zw.onrender.com');
 
     socket.on('connect', () => {
       console.log('Connected to Socket.IO server');
@@ -56,5 +56,5 @@ const AuctionList = () => {
   );
 };
 
-export default AuctionList;
+export default Auction;
 

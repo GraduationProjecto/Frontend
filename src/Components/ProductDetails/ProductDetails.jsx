@@ -131,8 +131,12 @@ export default function ProductDetails() {
           <div className="container my-5 productDetailsSection rounded-2">
             <div className="productDetailsContainer p-3">
               <div className="sectionHead p-3">
-                <div className="d-flex justify-content-between">
-                  <h3>{product?.type || product?.brand}</h3>
+             <div className="mb-4">
+             <h3 className="text-warning">CarDetails</h3>
+              <hr className="w-75 text-warning fw-bold" ></hr>
+             </div>
+                <div className="d-flex mt-2 justify-content-between">
+                  <h3>{product?.title || product?.brand}</h3>
                   <span>{product?.price} EGP</span>
                 </div>
               </div>

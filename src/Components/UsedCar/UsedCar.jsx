@@ -41,7 +41,7 @@ export default function UsedCar({ item }) {
                 <div className="col-md-2 smallImage d-flex justify-content-between text-center">
                   
                     <div className="smallImg mx-1 border-0">
-                      <img className="border-0" src={item?.images[0]?.secure_url} width="50px" height={"50px"}></img>
+                      <img className="border-0" src={item?.images[3]?.secure_url} width="50px" height={"50px"}></img>
                     </div>
                   
                   

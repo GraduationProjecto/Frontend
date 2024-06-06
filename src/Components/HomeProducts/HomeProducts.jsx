@@ -12,7 +12,7 @@ export default function HomeProducts() {
     async function fetchUsedCars() {
       setLoading(false);
       try {
-        const response = await axios.get(`https://backend-c6zw.onrender.com/car/usedCars?page=2`);
+        const response = await axios.get(`https://backend-c6zw.onrender.com/car/usedCars?page=1`);
         if (response.status === 200) {
           setUsedCars(response.data.response);
           setLoading(true);
