@@ -47,7 +47,7 @@ export default function SignIn() {
   return (
     <>
       <div className="container">
-        <div className="w-75 m-auto bg-body p-4 rounded-3 my-5 loginPage">
+        <div className="w-75 m-auto shadow-lg bg-body p-4 rounded-3 my-5 loginPage">
           <h2>Login Now :</h2>
           <form onSubmit={Login.handleSubmit}>
             <label htmlFor="name" className="my-1 mt-3">

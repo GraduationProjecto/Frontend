@@ -750,7 +750,8 @@ select {
 
 
 .product:hover .manner{
-  width: 85%;
+  width: 120%;
+  height: 90%;
 }
 
 .image_cover .manner{

@@ -3,7 +3,6 @@ import MainSection from "./Components/MAinSection/MainSection";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 import 'font-awesome/css/font-awesome.min.css';
-
 import "./App.css";
 import Products from "./Components/Products/Products";
 import SellCar from "./Components/SellCar/SellCar";
