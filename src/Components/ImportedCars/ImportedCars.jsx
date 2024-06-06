@@ -12,7 +12,7 @@ export default function ImportedCars() {
   async function getProducts() {
     setLoading(false);
     let data = await axios.get(
-      "http://localhost:8080/car/Home", {
+      " /car/Home", {
         headers: {
           authorization: `Bearer__${localStorage.getItem("token")}`,
         },

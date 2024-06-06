@@ -12,8 +12,8 @@ export default function UsedCar({ item }) {
             <div className="col-md-12">
               <div className="row">
                 <div className="col-md-2 BIGiMG">
-                  <div className="image_cover text-center">
-                    <img src={item?.images[0]?.secure_url} width="75%" className="manner"></img>
+                  <div className="image_cover h-100 text-center">
+                    <img src={item?.images[0]?.secure_url} width="100%" height={"80%"} className="manner"></img>
                   </div>
                 </div>
                 <div className="col-md-10  p-4">
@@ -41,7 +41,7 @@ export default function UsedCar({ item }) {
                 <div className="col-md-2 smallImage d-flex justify-content-between text-center">
                   
                     <div className="smallImg mx-1 border-0">
-                      <img className="border-0" src={item?.images[0]?.secure_url} width="50px" height={"50px"}></img>
+                      <img className="border-0" src={item?.images[3]?.secure_url} width="50px" height={"50px"}></img>
                     </div>
                   
                   

@@ -81,13 +81,13 @@ export default function Search() {
             <div className="searchInputs">
               <div className="searchBlock">
                 <h6 className="mx-3 fw-bold">Find used car (41677 Cars for sale)</h6>
-                <hr className="line" />
+                <hr className="line mt-4" />
               </div>
               <div className="Inputs">
                 <form className="formFilter" onSubmit={getResponse}>
                   <div className="row">
                     <div className="col-md-5">
-                      <select name="make" className="selectionFilter p-2" onChange={handleMakeChange}>
+                      <select name="type" className="selectionFilter p-2" onChange={handleMakeChange}>
                         <option value="">Select a make</option>
                         {newData.map((make) => (
                           <option key={make} value={make}>{make}</option>
@@ -130,14 +130,14 @@ export default function Search() {
             <div className="filter">
               <div className="filterHead">
                 <ul className="nav nav-pills">
-                  <li className="nav-item m-0">
-                    <a className="nav-link active" aria-current="page" href="#">Top Brands</a>
+                  <li className="nav-ite mx-3">
+                    <a className="nav-link bg-warning text-white fw-bold" aria-current="page" href="#">Top Brands</a>
                   </li>
                 </ul>
               </div>
               <hr className="line" />
               <div className="aboutFilter">
-                <div className="row">
+                <div className="row p-2 m-0">
                   {brandImage.map((brand) => (
                     <div className="col-md-3 p-2" key={brand._id}>
                       <img

@@ -10,7 +10,7 @@ import Footer from './../Footer/Footer';
 export default function MainSection() {
   return (
     <>
-    <div className="container road text-light p-4 rounded-4 mt-5 d-flex">
+    <div className="container road text-light p-4  rounded-4 mt-5 d-flex">
       <img src="	https://media.hatla2eestatic.com/images/general/road.png"/>
       <div>
       <p>Shorten the road in less than 1 minute</p>

@@ -1,9 +1,23 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import Footer from "./../Footer/Footer";
+import ModalLog from './../ModalLog/ModalLog';
 
 const Navigation = () => {
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setShowModal(true);
+    } else {
+      navigate(path);
+    }
+  };
+
   return (
     <>
       <nav>
@@ -17,22 +31,27 @@ const Navigation = () => {
           </div>
           <ul className="list-unstyled ulNav">
             <li className="navlink link1 liNav">
-              <NavLink
-                activeclassname="active"
-                to={"sell-your-car"}
+              <a
+                href="/sell-your-car"
+                onClick={(e) => handleNavClick(e, "sell-your-car")}
                 className="text-decoration-none aNAv"
               >
                 <span className="p-0 spanNAv">Sell Used Car</span>
-              </NavLink>
+              </a>
             </li>
             <li className="navlink link3 liNav">
-              <NavLink to={"new"} className="text-decoration-none aNAv">
+              <a
+                href="/new"
+                onClick={(e) => handleNavClick(e, "new")}
+                className="text-decoration-none aNAv"
+              >
                 <span className="p-0 spanNav">Sell New Car</span>
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>
       </nav>
+      <ModalLog show={showModal} onClose={() => setShowModal(false)} />
       <Outlet />
       <Footer />
     </>
