@@ -14,7 +14,7 @@ export default function Products() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://backend-c6zw.onrender.com/car/newCars?page=${page}`
+        `http://localhost:8080/car/newCars?page=${page}`
       );
       console.log(response);
       if (response.status === 200) {

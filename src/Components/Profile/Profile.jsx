@@ -13,7 +13,7 @@ const Profile = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          "https://backend-c6zw.onrender.com/user/profile",
+          "http://localhost:8080/user/profile",
           {
             headers: {
               authorization: ` Bearer__${localStorage.getItem("token")}`,
@@ -45,6 +45,8 @@ const Profile = () => {
           <div>
             <h2 className="py-2">{userData.name}</h2>
             <p>{userData.Phone || "+0201554247304"}</p>
+            <p><strong>Wallet Balance:</strong> ${userData.wallet}</p> {/* Display the wallet balance */}
+
           </div>
         </div>
         <div className="cars-for-sale">

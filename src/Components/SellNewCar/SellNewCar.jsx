@@ -75,7 +75,7 @@ const SellNewCar = () => {
       values.price = Number(values.price);
       try {
         const response = await axios.post(
-          "https://backend-c6zw.onrender.com/car/sell-new-car",
+          "http://localhost:8080/car/sell-new-car",
           values,
           {
             headers: {

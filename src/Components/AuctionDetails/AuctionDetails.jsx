@@ -1,48 +1,76 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading/Loading";
 import Slider from "react-slick";
+import { io } from "socket.io-client";
 
 const AuctionDetails = () => {
   const { id } = useParams();
   const [auction, setAuction] = useState(null);
   const [bid, setBid] = useState("");
   const [loading, setLoading] = useState(true);
+  const [currentPrice, setCurrentPrice] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch auction details from the backend
-    axios.get(`https://backend-c6zw.onrender.com/auction/specificAuction/${id}` , {
+    axios.get(`http://localhost:8080/Auction/${id}`, {
       headers: {
         authorization: `Bearer__${localStorage.getItem("token")}`,
       },
     })
-
       .then(response => {
         console.log(response);
-        setAuction(response.data.response);
-        setLoading(false)
+        if (response.data.response) {
+          setAuction(response.data.response);
+          setCurrentPrice(response.data.response.currentPrice); // Set initial current price
+        } else {
+          navigate(`/Payment/${id}`); // Redirect to payment form if response is false
+        }
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching auction details:", error);
         setLoading(false);
       });
 
-    const socket = new WebSocket(`wss://your-websocket-url/${id}`);
-    socket.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      if (data.newBid) {
-        setBid(data.newBid);
-      }
-    };
+    const socket = io('http://localhost:8080');
+
+    socket.on('connect', () => {
+      console.log('Connected to Socket.IO server');
+    });
+
+    socket.on('newPriceEvent', (newPrice) => {
+      setCurrentPrice(newPrice.newPrice); // Update current price on newPriceEvent
+      console.log(newPrice);
+    });
 
     return () => {
-      socket.close();
+      socket.disconnect();
     };
-  }, [id]);
+  }, [id, navigate]);
 
   const handleBidSubmit = () => {
-    // Add bid submission logic here
+    axios.post(`http://localhost:8080/Auction/updatePrice/${id}`, {
+      newPrice: bid,
+    }, {
+      headers: {
+        authorization: `Bearer__${localStorage.getItem("token")}`,
+      },
+    })
+      .then(response => {
+        console.log(response.status);
+        if (response.status === 200) {
+          setCurrentPrice(bid); // Update current price on successful bid
+        } else {
+          console.error('Failed to update price');
+        }
+      })
+      .catch(error => {
+        console.error("Error updating price:", error);
+      });
+
     console.log("Bid submitted:", bid);
   };
 
@@ -87,7 +115,7 @@ const AuctionDetails = () => {
           <div className="row d-flex justify-content-between">
             <div className="col-md-7 my-5">
               <Slider {...settings1} className="slider w-100">
-                {carId.images.map((img, index) => (
+                {carId.images && carId.images.map((img, index) => (
                   <div key={index}>
                     <img
                       src={img.secure_url}
@@ -123,6 +151,10 @@ const AuctionDetails = () => {
                 <div className="col-md-5 productInfoCar my-2 bg-body p-1 rounded-1">
                   <span className="text-warning fw-bold">description</span>
                   <p className="p-0 m-0 text-body-tertiary">{description}</p>
+                </div>
+                <div className="col-md-5 productInfoCar my-2 bg-body p-1 rounded-1">
+                  <span className="text-warning fw-bold">current price</span>
+                  <p className="p-0 m-0 text-body-tertiary">{currentPrice}</p>
                 </div>
               </div>
               <div className="bid-section my-4">

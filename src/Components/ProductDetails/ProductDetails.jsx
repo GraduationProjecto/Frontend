@@ -56,7 +56,7 @@ export default function ProductDetails() {
   async function getSameBrandUse(categoryId) {
     try {
       let { data } = await axios.get(
-        `https://backend-c6zw.onrender.com/car/allCarsUsed/${categoryId}`
+        `http://localhost:8080/car/allCarsUsed/${categoryId}`
       );
       console.log(data?.response);
       setSameBrandCarsUsed(data?.response);
@@ -84,7 +84,7 @@ export default function ProductDetails() {
       }
 
       await axios.post(
-        `https://backend-c6zw.onrender.com/car/rating/${id}`,
+        `http://localhost:8080/car/rating/${id}`,
         { rating }, // Send numeric rating in the request body
         {
           headers: {

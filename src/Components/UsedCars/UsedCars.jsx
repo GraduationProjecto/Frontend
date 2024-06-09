@@ -27,7 +27,7 @@ export default function UsedCars() {
   async function fetchUsedCarsByBrand(brandId) {
     setLoading(true);
     try {
-      const response = await axios.get(`https://backend-c6zw.onrender.com/car/allCarsUsed/${brandId}`);
+      const response = await axios.get(`http://localhost:8080/car/allCarsUsed/${brandId}`);
       if (response.status === 200) {
         setUsedCars(response.data.response);
         setLoading(false);
@@ -40,7 +40,7 @@ export default function UsedCars() {
   async function fetchUsedCars(page) {
     setLoading(true);
     try {
-      const response = await axios.get(`https://backend-c6zw.onrender.com/car/usedCars?page=${page}`);
+      const response = await axios.get(`http://localhost:8080/car/usedCars?page=${page}`);
       if (response.status === 200) {
         setUsedCars(response.data.response);
         setLoading(false);
