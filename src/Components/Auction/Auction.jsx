@@ -11,7 +11,7 @@ const Auction = () => {
   useEffect(() => {
     console.log("here");
     // Fetch auctions from the backend
-    axios.get('https://backend-c6zw.onrender.com/auction/auctionsView')
+    axios.get('http://localhost:8080/Auction/auctionsView')
       .then(response => {
         console.log(response);
         setAuctions(response.data.response);
@@ -21,7 +21,7 @@ const Auction = () => {
       });
 
     // Set up Socket.IO connection
-    const socket = io('https://backend-c6zw.onrender.com');
+    const socket = io('http://localhost:8080');
 
     socket.on('connect', () => {
       console.log('Connected to Socket.IO server');

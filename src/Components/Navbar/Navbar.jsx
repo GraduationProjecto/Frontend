@@ -10,7 +10,7 @@ export default function Navbar() {
     <>
       <nav className="navbar navNav navbar-expand-lg bg-body-tertiary p-3">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img src={logo} width={"150px"} />
           </a>
           <button
@@ -50,7 +50,7 @@ export default function Navbar() {
                   aria-current="page"
                   to="/importedCar"
                 >
-                  Imported cars
+                  Recommended cars
                 </NavLink>
               </li>
               <li className="nav-item">

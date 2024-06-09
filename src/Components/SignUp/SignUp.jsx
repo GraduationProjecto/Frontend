@@ -35,7 +35,7 @@ export default function SignUp() {
     onSubmit: (values) => {
       setLoading(false);
       axios
-        .post("https://backend-c6zw.onrender.com/user/SignUp", values)
+        .post("http://localhost:8080/user/SignUp", values)
         .then((data) => {
           console.log(data);
           navigate("/signIn");

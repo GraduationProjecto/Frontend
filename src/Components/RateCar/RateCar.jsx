@@ -25,7 +25,7 @@ export default function RateCar() {
   async function getBrands() {
     setLoading(false);
     let data = await axios.get(
-      "https://backend-c6zw.onrender.com/Brand/getBrands"
+      "http://localhost:8080/Brand/getBrands"
     );
     if (data?.data?.message === "All brands fetched successfully") {
       setNewData(data?.data?.response);
@@ -36,7 +36,7 @@ export default function RateCar() {
   async function getYears() {
     setLoading(false);
     let data = await axios.get(
-      "https://backend-c6zw.onrender.com/Brand/getYears"
+      "http://localhost:8080/Brand/getYears"
     );
     if (data?.data?.message === "All years fetched successfully") {
       setYears(data?.data?.response);
@@ -51,7 +51,7 @@ export default function RateCar() {
   async function getSpecificModel(make) {
     setLoading(false);
     let data = await axios.get(
-      `https://backend-c6zw.onrender.com/Brand/getModelsToBrand?brandType=${make}`
+      `http://localhost:8080/Brand/getModelsToBrand?brandType=${make}`
     );
     if (data?.data?.message === "All models fetched successfully") {
       setSpecificModels(data?.data?.response);

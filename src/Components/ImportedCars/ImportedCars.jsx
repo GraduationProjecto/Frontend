@@ -12,7 +12,7 @@ export default function ImportedCars() {
   async function getProducts() {
     setLoading(false);
     let data = await axios.get(
-      " /car/Home", {
+      "http://localhost:8080/car/Home", {
         headers: {
           authorization: `Bearer__${localStorage.getItem("token")}`,
         },
@@ -42,7 +42,7 @@ export default function ImportedCars() {
           </div>
           <div className="row">
             {newData.map((item) => {
-                return <ImportedCar item={item} key={item.id} />;
+                return <ImportedCar item={item} key={item._id} />;
               })}
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function HomeNewCars() {
       setLoading(false);
       try {
         const response = await axios.get(
-          `https://backend-c6zw.onrender.com/car/newCars?page=1`
+          `http://localhost:8080/car/newCars?page=1`
         );
         console.log(response);
         if (response.status === 200) {

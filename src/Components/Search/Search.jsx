@@ -13,7 +13,7 @@ export default function Search() {
   let navigate = useNavigate();
 
   async function getBrands() {
-    let data = await axios.get("https://backend-c6zw.onrender.com/Brand/getBrands");
+    let data = await axios.get("http://localhost:8080/Brand/getBrands");
 
     if (data?.data?.message === "All brands fetched successfully") {
       setNewData(data?.data?.response);
@@ -21,7 +21,7 @@ export default function Search() {
   }
 
   async function getYears() {
-    let data = await axios.get("https://backend-c6zw.onrender.com/Brand/getYears");
+    let data = await axios.get("http://localhost:8080/Brand/getYears");
 
     if (data?.data?.message === "All years fetched successfully") {
       setYears(data?.data?.response);
@@ -29,7 +29,7 @@ export default function Search() {
   }
 
   async function getBRandsImage() {
-    let data = await axios.get("https://backend-c6zw.onrender.com/car/get-all-category?limit=12");
+    let data = await axios.get("http://localhost:8080/car/get-all-category?limit=12");
 
     if (data?.status === 200) {
       setBrandImage(data.data?.data.category);
@@ -37,7 +37,7 @@ export default function Search() {
   }
 
   async function getSpecificModel(make) {
-    let data = await axios.get(`https://backend-c6zw.onrender.com/Brand/getModelsToBrand?brandType=${make}`);
+    let data = await axios.get(`http://localhost:8080/Brand/getModelsToBrand?brandType=${make}`);
 
     if (data?.data?.message === "All models fetched successfully") {
       setSpecificModels(data?.data?.response);

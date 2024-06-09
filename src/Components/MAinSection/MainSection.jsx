@@ -15,7 +15,7 @@ export default function MainSection() {
       <div>
       <p>Shorten the road in less than 1 minute</p>
       <h2 className="text-light fw-bold">Sell your car faster than ever before</h2>
-      <a className="p-3 bg-warning m-3 d-inline-block rounded-3 text-light fw-bold " href="/#/sellCar">Sell Your Car</a>
+      <a className="p-3 bg-warning m-3 d-inline-block rounded-3 text-light fw-bold " href="/SellCar">Sell Your Car</a>
       </div>
     </div>
       <div className="container">

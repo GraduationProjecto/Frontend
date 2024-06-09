@@ -28,7 +28,7 @@ const CreateAuction = () => {
     try {
         formData.startingPrice = Number(formData.startingPrice)
         console.log(formData);
-      const response = await axios.post(`https://backend-c6zw.onrender.com/auction/createAuction/${id}`, formData,  {
+      const response = await axios.post(`http://localhost:8080/auction/createAuction/${id}`, formData,  {
         headers: {
           authorization: `Bearer__${localStorage.getItem("token")}`,
         },
