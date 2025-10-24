@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/ecommerce/static/css/main.96c65e6e.css",
+    "main.js": "/ecommerce/static/js/main.3c13805e.js",
+    "static/js/592.3eab0485.chunk.js": "/ecommerce/static/js/592.3eab0485.chunk.js",
+    "static/media/fa-solid-900.ttf": "/ecommerce/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
+    "static/media/fa-brands-400.ttf": "/ecommerce/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
+    "static/media/fa-solid-900.woff2": "/ecommerce/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
+    "static/media/fa-brands-400.woff2": "/ecommerce/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
+    "static/media/error.svg": "/ecommerce/static/media/error.084f5f5b0eb10d3216cb7c939108e1f6.svg",
+    "static/media/fa-regular-400.ttf": "/ecommerce/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/30033578-2c2c-4dba-8d4f-fe0d1f9642d9.avif": "/ecommerce/static/media/30033578-2c2c-4dba-8d4f-fe0d1f9642d9.6862e0bbf4fd9abcf056.avif",
+    "static/media/2e299e90-97ef-443d-ab49-d880e19044bf.avif": "/ecommerce/static/media/2e299e90-97ef-443d-ab49-d880e19044bf.06a3b4844b104df6b3c0.avif",
+    "static/media/a4f4b458-c1f1-424c-aa1f-fd5bd2a8d41f.avif": "/ecommerce/static/media/a4f4b458-c1f1-424c-aa1f-fd5bd2a8d41f.b10b388257b8792f0604.avif",
+    "static/media/fa-regular-400.woff2": "/ecommerce/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
+    "static/media/fa-v4compatibility.ttf": "/ecommerce/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
+    "static/media/freshcart-logo.svg": "/ecommerce/static/media/freshcart-logo.53f7a424c3aedc30a0fb46dc2278137c.svg",
+    "static/media/fa-v4compatibility.woff2": "/ecommerce/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
+    "static/media/slick.svg": "/ecommerce/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/ecommerce/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/ecommerce/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/ecommerce/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/ecommerce/index.html",
+    "main.96c65e6e.css.map": "/ecommerce/static/css/main.96c65e6e.css.map",
+    "main.3c13805e.js.map": "/ecommerce/static/js/main.3c13805e.js.map",
+    "592.3eab0485.chunk.js.map": "/ecommerce/static/js/592.3eab0485.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96c65e6e.css",
+    "static/js/main.3c13805e.js"
+  ]
+}
